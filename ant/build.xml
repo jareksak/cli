@@ -1,0 +1,51 @@
+<project name="CentralLibraryIndex" default="compile">
+
+    <property name="build.sysclasspath" value="last"/>
+    <property name="dir.classes" value="../classes"/>
+    <property name="dir.lib" value="../lib"/>
+    <property name="dir.src" value="../src"/>
+    <property name="dir.html" value="../html"/>
+
+    <path id="lib.path">
+        <pathelement location="/usr/share/log4j/lib/log4j.jar"/>
+        <pathelement location=
+            "/usr/share/tomcat-servlet-api-3.0/lib/servlet-api.jar"/>
+        <pathelement location="${dir.lib}/commons-lang3-3.1.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${dir.classes}"/>
+        <delete dir="${dir.html}"/>
+        <delete file="../tags"/>
+    </target>
+    
+    <target name="mkdirs">
+        <mkdir dir="${dir.classes}"/>
+        <mkdir dir="${dir.html}"/>
+    </target>
+
+    <target name="compile" depends="mkdirs">
+        <copy file="${dir.src}/log4j.properties" todir="${dir.classes}"/>
+        <javac srcdir="${dir.src}" destdir="${dir.classes}" classpathref="lib.path"/>
+    </target>
+
+    <target name="html" depends="mkdirs">
+        <javadoc 
+            sourcepath="${dir.src}"
+            destdir="${dir.html}"
+            classpathref="lib.path"
+            private="true"
+            encoding="utf8"
+            charset="utf8"
+            docencoding="utf8">
+        </javadoc>
+    </target>
+
+    <target name="tags" depends="compile">
+        <exec executable="ctags">
+            <arg line="-R -f ../tags"/>
+            <arg path="${dir.src}"/>
+        </exec>
+    </target>
+
+</project>
