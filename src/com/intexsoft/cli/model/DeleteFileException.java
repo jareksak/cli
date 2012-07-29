@@ -3,7 +3,7 @@ package com.intexsoft.cli.model;
 import java.io.File;
 
 /**
- * The exception throws when a program can't delete temporality file.
+ * The exception throws when a program can't delete a file.
  */
 public class DeleteFileException extends Exception {
     

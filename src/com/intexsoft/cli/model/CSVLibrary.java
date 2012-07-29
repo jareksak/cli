@@ -27,6 +27,7 @@ import java.io.FileNotFoundException;
  * ...
  * </pre>
  */
+
 public class CSVLibrary extends AbstractLibrary {
 
     public CSVLibrary(File dirLibrary) {
@@ -49,7 +50,7 @@ public class CSVLibrary extends AbstractLibrary {
      * @param parameters Parameters for finding books.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws CLIException
+     * @throws FindBookException
      */
     public Map<String, Object> findBook(Map<String, String> parameters) 
             throws FindBookException {
@@ -79,9 +80,10 @@ public class CSVLibrary extends AbstractLibrary {
                                 foundMissing.add((Book) book.clone());
                         }
                     }
+
                 } catch (FileNotFoundException e) {
                     throw new FindBookException(file, e);
-                    
+
                 } catch (IOException e) {
                     throw new FindBookException(file, e);
 
@@ -121,7 +123,7 @@ public class CSVLibrary extends AbstractLibrary {
      * @param parameters Parameters for ordering the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws CLIException
+     * @throws OrderBookException
      */
     public Map<String, Object> orderBook(Map<String, String> parameters)
             throws OrderBookException {
@@ -164,7 +166,7 @@ public class CSVLibrary extends AbstractLibrary {
                         } else
                             books.add(book);
                     }
-                    //throws FileNotFoundException, DeleteTmpFileException,
+                    //throws IOException, DeleteFileException,
                     //RenameTmpFileException
                     if (found) rewriteFile(file, books);
 
@@ -174,7 +176,7 @@ public class CSVLibrary extends AbstractLibrary {
                 } catch (IOException e) {
                     throw new OrderBookException(file, e);
 
-                } catch (DeleteTmpFileException e) {
+                } catch (DeleteFileException e) {
                     throw new OrderBookException(e);
 
                 } catch (RenameTmpFileException e) {
@@ -208,10 +210,10 @@ public class CSVLibrary extends AbstractLibrary {
      * @param parameters Parameters for returning the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws CLIException
+     * @throws ReturnBookException
      */
     public Map<String, Object> returnBook(Map<String, String> parameters)
-            throws CLIException {
+            throws ReturnBookException {
 
         Map<String, Object> result = new HashMap<String, Object>();
         Boolean found = false;
@@ -252,27 +254,27 @@ public class CSVLibrary extends AbstractLibrary {
                             books.add(book);
                     }
 
-                    //throws FileNotFoundException, DeleteTmpFileException,
+                    //throws IOException, DeleteFileException,
                     //RenameTmpFileException
                     if (found) rewriteFile(file, books);
 
                 } catch (FileNotFoundException e) {
-                    throw new OrderBookException(file, e);
+                    throw new ReturnBookException(file, e);
                     
                 } catch (IOException e) {
-                    throw new OrderBookException(file, e);
+                    throw new ReturnBookException(file, e);
 
-                } catch (DeleteTmpFileException e) {
-                    throw new OrderBookException(e);
+                } catch (DeleteFileException e) {
+                    throw new ReturnBookException(e);
 
                 } catch (RenameTmpFileException e) {
-                    throw new OrderBookException(e);
+                    throw new ReturnBookException(e);
 
                 } finally {
                     try {
                         if (in != null) in.close();
                     } catch (IOException e) {
-                        throw new OrderBookException(file, e);
+                        throw new ReturnBookException(file, e);
                     }
                 }
             }
@@ -286,7 +288,6 @@ public class CSVLibrary extends AbstractLibrary {
      * @param line Line that was reading from the file.
      */
     private Book getBook(String line) {
-   
         Book book = null;
         String[] fields = line.split(",");
         if (fields.length == 3) {
@@ -305,15 +306,18 @@ public class CSVLibrary extends AbstractLibrary {
      * @param file  File object with information about books.
      * @param books List objects type of Book for write in the file.
      * 
-     * @throws CLIException
+     * @throws IOException
+     * @throws DeleteFileException
+     * @throws RenameTmpFileException
      */
     private void rewriteFile(File file, List<Book> books)
-            throws FileNotFoundException, DeleteTmpFileException, RenameTmpFileException {
+            throws  IOException, DeleteFileException,
+                    RenameTmpFileException {
 
         File tempFile = new File(file.getAbsolutePath() + ".tmp");
         PrintWriter pw = null;
             
-        //throws FileNotFoundException
+        //throws IOException
         pw = new PrintWriter(new FileWriter(tempFile));
         
         for (Book book: books) {
@@ -334,13 +338,13 @@ public class CSVLibrary extends AbstractLibrary {
         }
 
         if (!file.delete()) {
-            throw new DeleteTmpFileException(file);
+            throw new DeleteFileException(file);
         }
 
         if (!tempFile.renameTo(file))
-            throw new RenameTmpFileException(file);
+            throw new RenameTmpFileException(tempFile);
             
-        if (in != null) in.close();
+        if (pw != null) pw.close();
     }
 }
 

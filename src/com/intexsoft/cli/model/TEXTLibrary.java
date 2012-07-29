@@ -6,14 +6,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.io.File;
-import java.io.LineNumberReader;
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-
-import com.intexsoft.cli.exception.CLIException;
 
 /**
  * Implementation the abstract class AbstractLibrary.<br>
@@ -51,10 +49,10 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param parameters Parameters for finding books.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws CLIException
+     * @throws FindBookException
      */
     public Map<String, Object> findBook(Map<String, String> parameters)
-            throws CLIException {
+            throws FindBookException {
 
         List<Book> found = new ArrayList<Book>();
         List<Book> foundMissing = new ArrayList<Book>();
@@ -65,7 +63,7 @@ public class TEXTLibrary extends AbstractLibrary {
                 try {
                     Book book = null; 
 
-                    //throws CLIException
+                    //throws FileNotFoundException, IOException
                     book = getBook(file);
                     
                     if (book == null) continue;
@@ -76,8 +74,11 @@ public class TEXTLibrary extends AbstractLibrary {
                         else
                             foundMissing.add((Book) book.clone());
                     }
-                } catch (CLIException e) {
-                    throw e;
+                } catch (FileNotFoundException e) {
+                    throw new FindBookException(file, e);
+                    
+                } catch (IOException e) {
+                    throw new FindBookException(file, e);
                 }
             }
         }
@@ -108,10 +109,10 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param parameters Parameters for ordering the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws CLIException
+     * @throws OrderBookException
      */
     public Map<String, Object> orderBook(Map<String, String> parameters)
-            throws CLIException {
+            throws OrderBookException {
 
         Map<String, Object> result = new HashMap<String, Object>();
 
@@ -120,7 +121,7 @@ public class TEXTLibrary extends AbstractLibrary {
             synchronized(file) {
                 Book book = null; 
                 try {
-                    //throws CLIException
+                    //throws FileNotFoundException, IOException
                     book = getBook(file);
 
                     if (book == null) continue;
@@ -129,6 +130,9 @@ public class TEXTLibrary extends AbstractLibrary {
                         if (book.getAbonent() == null) {
                             book.setAbonent(parameters.get("abonent"));
                             book.setIssued(getCurrentDate());
+
+                            //throws IOException,
+                            //DeleteFileException, RenameTmpFileException
                             rewriteFile(file, book);
 
                             result.put("OK", (Book) book.clone());
@@ -136,9 +140,17 @@ public class TEXTLibrary extends AbstractLibrary {
                             result.put("RESERVED", (Book) book.clone());
                         }
                     } 
+                } catch (FileNotFoundException e) {
+                    throw new OrderBookException(file, e);
+                    
+                } catch (IOException e) {
+                    throw new OrderBookException(file, e);
 
-                } catch (CLIException e) {
-                    throw e;
+                } catch (DeleteFileException e) {
+                    throw new OrderBookException(e);
+
+                } catch (RenameTmpFileException e) {
+                    throw new OrderBookException(e);
                 }
             }
         }
@@ -161,10 +173,10 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param parameters Parameters for returning the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws CLIException
+     * @throws ReturnBookException
      */
     public Map<String, Object> returnBook(Map<String, String> parameters)
-            throws CLIException {
+            throws ReturnBookException {
 
         Map<String, Object> result = new HashMap<String, Object>();
         Boolean found = false;
@@ -177,7 +189,7 @@ public class TEXTLibrary extends AbstractLibrary {
 
                 Book book = null; 
                 try {
-                    //throws CLIException
+                    //throws FileNotFoundException, IOException
                     book = getBook(file);
 
                     if (book == null) continue;
@@ -188,15 +200,25 @@ public class TEXTLibrary extends AbstractLibrary {
                             result.put("OK", (Book) book.clone());
 
                             book.setAbonent(null);
-                            //throws CLIException
+
+                            //throws IOException,
+                            //DeleteFileException, RenameTmpFileException
                             rewriteFile(file, book);
                         } else {
                             result.put("ALREADYRETURNED", null);
                         }
                     }
+                } catch (FileNotFoundException e) {
+                    throw new ReturnBookException(file, e);
+                    
+                } catch (IOException e) {
+                    throw new ReturnBookException(file, e);
 
-                } catch (CLIException e) {
-                    throw e;
+                } catch (DeleteFileException e) {
+                    throw new ReturnBookException(e);
+
+                } catch (RenameTmpFileException e) {
+                    throw new ReturnBookException(e);
                 }
             }
         }
@@ -208,49 +230,33 @@ public class TEXTLibrary extends AbstractLibrary {
      * Method get a file object and return a book object.
      * @param file Object of the file that contains the book fields.
      *
-     * @throws CLIException
+     * @throws FileNotFoundException
+     * @throws IOException
      */
-    private Book getBook(File file) throws CLIException {
+    private Book getBook(File file)
+            throws FileNotFoundException, IOException {
 
-        Book book = null;
-        LineNumberReader in = null;
-        try {
-            //throws FileNotFoundException
-            in = new LineNumberReader(new FileReader(file));
+        //throws FileNotFoundException
+        BufferedReader in = new BufferedReader(new FileReader(file));
 
-            String[] fields = new String[5];
+        String[] fields = new String[5];
 
-            String line;
-            int i = 0;
-            //throws IOException
-            while ((line = in.readLine()) != null) {
-                StringTokenizer sTokenizer = new StringTokenizer(line, "=");
-                sTokenizer.nextToken();
-                if (sTokenizer.hasMoreTokens()) {
-                    fields[i] = sTokenizer.nextToken();
-                    i++;
-                }
-            }
-
-            book = new Book(fields[0], fields[1], fields[2],
-                                 fields[3], fields[4]);
-        
-        } catch (FileNotFoundException e) {
-            throw new CLIException("Can't open file: " +
-                file.getPath() + ". ");
-        } catch (IOException e) {
-            throw new CLIException("Can't read line: " +
-                in.getLineNumber() + " in file: " + file + ". ");
-        } finally {
-            try {
-                if (in != null) in.close();
-            } catch (IOException e) {
-                throw new CLIException("Can't close file: " +
-                    file.getPath() + ". ");
+        String line;
+        int i = 0;
+        //throws IOException
+        while ((line = in.readLine()) != null) {
+            StringTokenizer sTokenizer = new StringTokenizer(line, "=");
+            sTokenizer.nextToken();
+            if (sTokenizer.hasMoreTokens()) {
+                fields[i] = sTokenizer.nextToken();
+                i++;
             }
         }
+        
+        //throws IOException
+        if (in != null) in.close();
 
-        return book;
+        return new Book(fields[0], fields[1], fields[2], fields[3], fields[4]);
     }
 
     /**
@@ -260,49 +266,44 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param file The File object with information about books.
      * @param book The Book object for write in the file.
      *
-     * @throws CLIException
+     * @throws IOException
+     * @throws DeleteFileException
+     * @throws RenameFileException
      */
-    private void rewriteFile(File file, Book book) throws CLIException {
+    private void rewriteFile(File file, Book book)
+            throws  IOException, DeleteFileException,
+                    RenameTmpFileException {
 
         File tempFile = new File(file.getAbsolutePath() + ".tmp");
         PrintWriter pw = null;
         
-        try {
-            //throws IOException
-            pw = new PrintWriter(new FileWriter(tempFile));
+        //throws IOException
+        pw = new PrintWriter(new FileWriter(tempFile));
 
-            StringBuilder sb = new StringBuilder();
-            sb.append("Index=" + book.getId() + "\n");
-            sb.append("Author=" + book.getAuthor() + "\n");
-            sb.append("Name=" + book.getName() + "\n");
-            if (book.getIssued() != null)
-                sb.append("Issued=" + book.getIssued() + "\n");
-            else
-                sb.append("Issued=\n");
-            if (book.getAbonent() != null)
-                sb.append("Issuedto=" + book.getAbonent());
-            else
-                sb.append("Issuedto=\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append("Index=" + book.getId() + "\n");
+        sb.append("Author=" + book.getAuthor() + "\n");
+        sb.append("Name=" + book.getName() + "\n");
+        if (book.getIssued() != null)
+            sb.append("Issued=" + book.getIssued() + "\n");
+        else
+            sb.append("Issued=\n");
+        if (book.getAbonent() != null)
+            sb.append("Issuedto=" + book.getAbonent());
+        else
+            sb.append("Issuedto=\n");
 
-            pw.print(sb.toString());
-            pw.flush();
+        pw.print(sb.toString());
+        pw.flush();
 
-            if (!file.delete()) {
-                throw new CLIException("Can't delete file " +
-                                        file.getName() + ". ");
-            }
-
-            if (!tempFile.renameTo(file))
-                throw new CLIException("Can't rename file" +
-                                        tempFile.getName() + ". ");
-
-        } catch (IOException e) {
-            throw new CLIException("Can't open file: " + tempFile + ". ");
-        } catch (CLIException e) {
-            throw e;
-        } finally {
-            if (pw != null) pw.close();
+        if (!file.delete()) {
+            throw new DeleteFileException(file);
         }
+
+        if (!tempFile.renameTo(file))
+            throw new RenameTmpFileException(tempFile);
+            
+        if (pw != null) pw.close();
     }
 }
 

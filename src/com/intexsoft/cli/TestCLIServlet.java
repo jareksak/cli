@@ -16,7 +16,7 @@ import com.intexsoft.cli.controller.CLIController;
 import org.apache.log4j.Logger;
 
 /**
- * The class for working with the Central Library Index
+ * The class for working with the Central Libraries Index
  * over WEB interface
  */
 public class TestCLIServlet extends HttpServlet {

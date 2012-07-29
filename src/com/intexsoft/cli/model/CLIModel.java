@@ -7,15 +7,11 @@ import java.util.Arrays;
 import java.io.File;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import com.intexsoft.cli.exception.CLIException;
 
 import org.apache.log4j.Logger;
 
 /**
- * The class represent a model of the Central Library Index (CLI).<br>
+ * The class represent a model of the Central Libraries Index (CLI).<br>
  */
 public class CLIModel {
 
@@ -71,7 +67,7 @@ public class CLIModel {
         Boolean found = false;
         for (Library library: libraries) {
             try {
-                //throws CLIException
+                //throws FindBookException
                 Map<String, Object> findResult = library.findBook(parameters);
 
                 if (!findResult.containsKey("NOTFOUND")) {
@@ -80,9 +76,13 @@ public class CLIModel {
                     result.add(findResult);
                 }
 
-            } catch (CLIException e) {
-                log.error("Error in findBook(). Library: " +
-                           library.getName() + ". " + e.getMessage());
+            } catch (FindBookException e) {
+                StringWriter trace = new StringWriter();
+                e.printStackTrace(new PrintWriter(trace));
+                log.error("Library: " + library.getName() + "\n"
+                    + trace.toString());
+                throw new RuntimeException("Error when finding a book. " +
+                    "See the messages.log file for details.");
             }
         }
 
@@ -110,7 +110,7 @@ public class CLIModel {
         Boolean found = false;
         for (Library library: libraries) {
             try {
-                //throws CLIException
+                //throws OrderBookException
                 result = library.orderBook(parameters);
 
                 if (!result.isEmpty()) {
@@ -119,9 +119,13 @@ public class CLIModel {
                     break;
                 }
                 
-            } catch (CLIException e) {
-                log.error("Error in orderBook(). Library: " +
-                           library.getName() + ". " + e.getMessage());
+            } catch (OrderBookException e) {
+                StringWriter trace = new StringWriter();
+                e.printStackTrace(new PrintWriter(trace));
+                log.error("Library: " + library.getName() + "\n"
+                    + trace.toString());
+                throw new RuntimeException("Error when ordering a book. " +
+                    "See the messages.log file for details.");
             }
         }
 
@@ -148,6 +152,7 @@ public class CLIModel {
         Boolean found = false;
         for (Library library: libraries) {
             try {
+                //throws ReturnBookException
                 result = library.returnBook(parameters);
                 
                 if (!result.isEmpty()) {
@@ -156,9 +161,13 @@ public class CLIModel {
                     break;
                 }
 
-            } catch (CLIException e) {
-                log.error("Error in returnBook(). Library: " +
-                           library.getName() + ". " + e.getMessage());
+            } catch (ReturnBookException e) {
+                StringWriter trace = new StringWriter();
+                e.printStackTrace(new PrintWriter(trace));
+                log.error("Library: " + library.getName() + "\n"
+                    + trace.toString());
+                throw new RuntimeException("Error when returning a book. " +
+                    "See the messages.log file for details.");
             }
         } 
 

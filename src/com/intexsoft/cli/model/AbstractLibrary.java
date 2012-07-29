@@ -7,10 +7,6 @@ import java.util.Map;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import com.intexsoft.cli.exception.CLIException;
 
 /**
  * The abstract class for library classes.
@@ -40,10 +36,10 @@ public abstract class AbstractLibrary implements Library {
      * @param parameters Parameters for finding books.
      * @return           List of objects with find results.
      *
-     * @throws CLIException
+     * @throws FindBookException
      */
     public abstract Map<String, Object> findBook(Map<String, String> parameters)
-        throws CLIException;
+        throws FindBookException;
 
     /**
      * Abstract method for order a book.
@@ -51,10 +47,10 @@ public abstract class AbstractLibrary implements Library {
      * @param parameters Parameters for ordering the book.
      * @return           Object with result the operation.
      *
-     * @throws CLIException
+     * @throws OrderBookException
      */
     public abstract Map<String, Object> orderBook(Map<String, String> parameters)
-        throws CLIException;
+        throws OrderBookException;
 
     /**
      * Abstract method for return a book.
@@ -62,10 +58,10 @@ public abstract class AbstractLibrary implements Library {
      * @param parameters Parameters for returning the book.
      * @return           Object with result the operation.
      *
-     * @throws CLIException
+     * @throws ReturnBookException
      */
     public abstract Map<String, Object> returnBook(Map<String, String> parameters)
-        throws CLIException;
+        throws ReturnBookException;
 
     public String getName() {
         return nameLibrary;
