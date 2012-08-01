@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The interfase defining methods characteristic for library classes.
+ * The interfase defining methods characteristic for the library classes.
  */
 public interface Library {
 

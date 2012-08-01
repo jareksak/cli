@@ -1,4 +1,4 @@
-package com.intexsoft.cli.command;
+package com.intexsoft.cli.controller;
 
 import java.util.Map;
 import java.util.HashMap;

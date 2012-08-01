@@ -1,4 +1,4 @@
-package com.intexsoft.cli.command;
+package com.intexsoft.cli.controller;
 
 /**
  * The class of the command for getting help about syntax of commands.

@@ -1,0 +1,243 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AbstractLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    public AbstractLibrary(File dirLibrary) {$/;"	m	class:AbstractLibrary
+AbstractLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^public abstract class AbstractLibrary implements Library {$/;"	c
+Book	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public Book(String id, String author, String name) {$/;"	m	class:Book
+Book	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public Book(String id, String author, String name,$/;"	m	class:Book
+Book	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^public class Book implements Cloneable {$/;"	c
+CLICommandFactory	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^public class CLICommandFactory {$/;"	c
+CLIConsoleView	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIConsoleView.java	/^    public CLIConsoleView(CLIController controller) {$/;"	m	class:CLIConsoleView
+CLIConsoleView	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIConsoleView.java	/^public class CLIConsoleView extends CLIView {$/;"	c
+CLIController	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLIController.java	/^    public CLIController(CLIModel model) {$/;"	m	class:CLIController
+CLIController	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLIController.java	/^public class CLIController {$/;"	c
+CLIModel	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^    public CLIModel(String rootDirectory) {$/;"	m	class:CLIModel
+CLIModel	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^public class CLIModel {$/;"	c
+CLIView	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    public CLIView(CLIController controller) {$/;"	m	class:CLIView
+CLIView	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^public abstract class CLIView {$/;"	c
+CLIWebView	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    public CLIWebView(CLIController controller) {$/;"	m	class:CLIWebView
+CLIWebView	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^public class CLIWebView extends CLIView {$/;"	c
+CSVLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^    public CSVLibrary(File dirLibrary) {$/;"	m	class:CSVLibrary
+CSVLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^public class CSVLibrary extends AbstractLibrary {$/;"	c
+Command	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^public abstract class Command {$/;"	c
+CommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CommandException.java	/^    public CommandException() {}$/;"	m	class:CommandException
+CommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CommandException.java	/^    public CommandException(Throwable cause) {$/;"	m	class:CommandException
+CommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CommandException.java	/^public class CommandException extends Exception {$/;"	c
+DeleteFileException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^    public DeleteFileException() {}$/;"	m	class:DeleteFileException
+DeleteFileException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^    public DeleteFileException(File file) {$/;"	m	class:DeleteFileException
+DeleteFileException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^public class DeleteFileException extends Exception {$/;"	c
+FindBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookException.java	/^    public FindBookException() {}$/;"	m	class:FindBookException
+FindBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookException.java	/^    public FindBookException(Throwable cause) {$/;"	m	class:FindBookException
+FindBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookException.java	/^public class FindBookException extends Exception {$/;"	c
+FindBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^    public FindBookInCSVLibException() {}$/;"	m	class:FindBookInCSVLibException
+FindBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^    public FindBookInCSVLibException(File file, Throwable cause) {$/;"	m	class:FindBookInCSVLibException
+FindBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^public class FindBookInCSVLibException extends FindBookException {$/;"	c
+FindBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^    public FindBookInTEXTLibException() {}$/;"	m	class:FindBookInTEXTLibException
+FindBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^    public FindBookInTEXTLibException(File file, Throwable cause) {$/;"	m	class:FindBookInTEXTLibException
+FindBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^public class FindBookInTEXTLibException extends FindBookException {$/;"	c
+FindCommand	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommand.java	/^public class FindCommand extends Command {$/;"	c
+FindCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^    public FindCommandException() {}$/;"	m	class:FindCommandException
+FindCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^    public FindCommandException(Library library, Throwable cause) {$/;"	m	class:FindCommandException
+FindCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^public class FindCommandException extends CommandException {$/;"	c
+HelpCommand	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/HelpCommand.java	/^public class HelpCommand extends Command {$/;"	c
+Library	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Library.java	/^public interface Library {$/;"	i
+OrderBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookException.java	/^    public OrderBookException() {}$/;"	m	class:OrderBookException
+OrderBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookException.java	/^    public OrderBookException(Throwable cause) {$/;"	m	class:OrderBookException
+OrderBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookException.java	/^public class OrderBookException extends Exception {$/;"	c
+OrderBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^    public OrderBookInCSVLibException() {}$/;"	m	class:OrderBookInCSVLibException
+OrderBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^    public OrderBookInCSVLibException(File file, Throwable cause) {$/;"	m	class:OrderBookInCSVLibException
+OrderBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^    public OrderBookInCSVLibException(Throwable cause) {$/;"	m	class:OrderBookInCSVLibException
+OrderBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^public class OrderBookInCSVLibException extends OrderBookException {$/;"	c
+OrderBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^    public OrderBookInTEXTLibException() {}$/;"	m	class:OrderBookInTEXTLibException
+OrderBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^    public OrderBookInTEXTLibException(File file, Throwable cause) {$/;"	m	class:OrderBookInTEXTLibException
+OrderBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^    public OrderBookInTEXTLibException(Throwable cause) {$/;"	m	class:OrderBookInTEXTLibException
+OrderBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^public class OrderBookInTEXTLibException extends OrderBookException {$/;"	c
+OrderCommand	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommand.java	/^public class OrderCommand extends Command {$/;"	c
+OrderCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^    public OrderCommandException() {}$/;"	m	class:OrderCommandException
+OrderCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^    public OrderCommandException(Library library, Throwable cause) {$/;"	m	class:OrderCommandException
+OrderCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^public class OrderCommandException extends CommandException {$/;"	c
+RenameTmpFileException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^    public RenameTmpFileException() {}$/;"	m	class:RenameTmpFileException
+RenameTmpFileException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^    public RenameTmpFileException(File file) {$/;"	m	class:RenameTmpFileException
+RenameTmpFileException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^public class RenameTmpFileException extends Exception {$/;"	c
+ReturnBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookException.java	/^    public ReturnBookException() {}$/;"	m	class:ReturnBookException
+ReturnBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookException.java	/^    public ReturnBookException(Throwable cause) {$/;"	m	class:ReturnBookException
+ReturnBookException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookException.java	/^public class ReturnBookException extends Exception {$/;"	c
+ReturnBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^    public ReturnBookInCSVLibException() {}$/;"	m	class:ReturnBookInCSVLibException
+ReturnBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^    public ReturnBookInCSVLibException(File file, Throwable cause) {$/;"	m	class:ReturnBookInCSVLibException
+ReturnBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^    public ReturnBookInCSVLibException(Throwable cause) {$/;"	m	class:ReturnBookInCSVLibException
+ReturnBookInCSVLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^public class ReturnBookInCSVLibException extends ReturnBookException {$/;"	c
+ReturnBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^    public ReturnBookInTEXTLibException() {}$/;"	m	class:ReturnBookInTEXTLibException
+ReturnBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^    public ReturnBookInTEXTLibException(File file, Throwable cause) {$/;"	m	class:ReturnBookInTEXTLibException
+ReturnBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^    public ReturnBookInTEXTLibException(Throwable cause) {$/;"	m	class:ReturnBookInTEXTLibException
+ReturnBookInTEXTLibException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^public class ReturnBookInTEXTLibException extends ReturnBookException {$/;"	c
+ReturnCommand	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommand.java	/^public class ReturnCommand extends Command {$/;"	c
+ReturnCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^    public ReturnCommandException() {}$/;"	m	class:ReturnCommandException
+ReturnCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^    public ReturnCommandException(Library library, Throwable cause) {$/;"	m	class:ReturnCommandException
+ReturnCommandException	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^public class ReturnCommandException extends CommandException {$/;"	c
+TEXTLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^    public TEXTLibrary(File dirLibrary) { super(dirLibrary); }$/;"	m	class:TEXTLibrary
+TEXTLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^public class TEXTLibrary extends AbstractLibrary {$/;"	c
+TestCLI	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLI.java	/^class TestCLI {$/;"	c
+TestCLIServlet	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^public class TestCLIServlet extends HttpServlet {$/;"	c
+abonent	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private String abonent = null;$/;"	f	class:Book	file:
+author	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private String author;$/;"	f	class:Book	file:
+clone	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public Object clone() {$/;"	m	class:Book
+com.intexsoft.cli	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLI.java	/^package com.intexsoft.cli;$/;"	p
+com.intexsoft.cli	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^package com.intexsoft.cli;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLIController.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CommandException.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommand.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/HelpCommand.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommand.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommand.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^package com.intexsoft.cli.controller;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Library.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^package com.intexsoft.cli.model;$/;"	p
+com.intexsoft.cli.view	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIConsoleView.java	/^package com.intexsoft.cli.view;$/;"	p
+com.intexsoft.cli.view	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^package com.intexsoft.cli.view;$/;"	p
+com.intexsoft.cli.view	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^package com.intexsoft.cli.view;$/;"	p
+commandName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    protected String commandName = "";$/;"	f	class:Command
+commands	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^    private final Map<String, Class> commands = createMap(); $/;"	f	class:CLICommandFactory	file:
+controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^    private CLIController controller;$/;"	f	class:TestCLIServlet	file:
+controller	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    private CLIController controller;$/;"	f	class:CLIView	file:
+createMap	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^    private Map<String, Class> createMap() {$/;"	m	class:CLICommandFactory	file:
+dispatcher	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    private RequestDispatcher dispatcher; $/;"	f	class:CLIWebView	file:
+display	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIConsoleView.java	/^    public void display(List<String> messages) {$/;"	m	class:CLIConsoleView
+display	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    public abstract void display(List<String> messages);$/;"	m	class:CLIView
+display	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    public void display(List<String> messages) {$/;"	m	class:CLIWebView
+execute	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public abstract Object execute() throws CommandException;$/;"	m	class:Command
+execute	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommand.java	/^    public List execute() throws FindCommandException {$/;"	m	class:FindCommand
+execute	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/HelpCommand.java	/^    public String execute() {$/;"	m	class:HelpCommand
+execute	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommand.java	/^    public Map execute() throws OrderCommandException {$/;"	m	class:OrderCommand
+execute	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommand.java	/^    public Map execute() throws ReturnCommandException {$/;"	m	class:ReturnCommand
+expression	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    protected String expression = "";$/;"	f	class:CLIView
+expressionChanged	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    protected void expressionChanged() {$/;"	m	class:CLIView
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^    private File file = null;$/;"	f	class:DeleteFileException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^    private File file = null;$/;"	f	class:FindBookInCSVLibException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^    private File file = null;$/;"	f	class:FindBookInTEXTLibException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^    private File file = null;$/;"	f	class:OrderBookInCSVLibException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^    private File file = null;$/;"	f	class:OrderBookInTEXTLibException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^    private File file = null;$/;"	f	class:RenameTmpFileException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^    private File file = null;$/;"	f	class:ReturnBookInCSVLibException	file:
+file	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^    private File file = null;$/;"	f	class:ReturnBookInTEXTLibException	file:
+files	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    protected List<File> files = new ArrayList<File> ();$/;"	f	class:AbstractLibrary
+findBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    public abstract Map<String, Object> findBook(Map<String, String> parameters)$/;"	m	class:AbstractLibrary
+findBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^    public List findBook(Map<String, String> parameters) $/;"	m	class:CLIModel
+findBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^    public Map<String, Object> findBook(Map<String, String> parameters) $/;"	m	class:CSVLibrary
+findBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Library.java	/^    public Map<String, Object> findBook(Map<String, String> parameters)$/;"	m	interface:Library
+findBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^    public Map<String, Object> findBook(Map<String, String> parameters)$/;"	m	class:TEXTLibrary
+findOnAuthorOrName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public boolean findOnAuthorOrName(Map<String, String> parameters) {$/;"	m	class:Book
+findOnId	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public boolean findOnId(Map<String, String> parameters) {$/;"	m	class:Book
+getAbonent	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public String getAbonent() {$/;"	m	class:Book
+getAuthor	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public String getAuthor() {$/;"	m	class:Book
+getBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^    private Book getBook(String line) {$/;"	m	class:CSVLibrary	file:
+getBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^    private Book getBook(File file)$/;"	m	class:TEXTLibrary	file:
+getCommand	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^    public Command getCommand(String expression, CLIModel model) {$/;"	m	class:CLICommandFactory
+getCommandName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^    private String getCommandName(String expression) {$/;"	m	class:CLICommandFactory	file:
+getCommandName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public String getCommandName() {$/;"	m	class:Command
+getCurrentDate	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    protected Date getCurrentDate() {$/;"	m	class:AbstractLibrary
+getExpression	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    public String getExpression() { return expression; }$/;"	m	class:CLIView
+getId	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public String getId() {$/;"	m	class:Book
+getIssued	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public String getIssued() {$/;"	m	class:Book
+getName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    public String getName() {$/;"	m	class:AbstractLibrary
+getName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public String getName() {$/;"	m	class:Book
+getName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Library.java	/^    public String getName();$/;"	m	interface:Library
+getParameters	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^    private Map<String, String> getParameters(String expression) {$/;"	m	class:CLICommandFactory	file:
+getUserInput	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIConsoleView.java	/^    public void getUserInput() {$/;"	m	class:CLIConsoleView
+id	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private String id;$/;"	f	class:Book	file:
+init	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^    public void init(ServletConfig config) throws ServletException {$/;"	m	class:TestCLIServlet
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^    private Boolean isSetFile() {$/;"	m	class:DeleteFileException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^    private Boolean isSetFile() {$/;"	m	class:FindBookInCSVLibException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^    private Boolean isSetFile() {$/;"	m	class:FindBookInTEXTLibException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^    private Boolean isSetFile() {$/;"	m	class:OrderBookInCSVLibException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^    private Boolean isSetFile() {$/;"	m	class:OrderBookInTEXTLibException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^    private Boolean isSetFile() {$/;"	m	class:RenameTmpFileException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^    private Boolean isSetFile() {$/;"	m	class:ReturnBookInCSVLibException	file:
+isSetFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^    private Boolean isSetFile() {$/;"	m	class:ReturnBookInTEXTLibException	file:
+isSetLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^    private Boolean isSetLibrary() {$/;"	m	class:FindCommandException	file:
+isSetLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^    private Boolean isSetLibrary() {$/;"	m	class:OrderCommandException	file:
+isSetLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^    private Boolean isSetLibrary() {$/;"	m	class:ReturnCommandException	file:
+isValid	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public abstract boolean isValid();$/;"	m	class:Command
+isValid	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommand.java	/^    public boolean isValid() {$/;"	m	class:FindCommand
+isValid	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/HelpCommand.java	/^    public boolean isValid() {$/;"	m	class:HelpCommand
+isValid	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommand.java	/^    public boolean isValid() {$/;"	m	class:OrderCommand
+isValid	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommand.java	/^    public boolean isValid() {$/;"	m	class:ReturnCommand
+issued	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private Date issued = null;$/;"	f	class:Book	file:
+libDir	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLI.java	/^    final static String libDir = "\/home\/jarek\/src\/intexsoft\/cli-web\/libraries";$/;"	f	class:TestCLI
+libraries	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^    private List<Library> libraries = new ArrayList<Library>();$/;"	f	class:CLIModel	file:
+library	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^    private Library library = null;$/;"	f	class:FindCommandException	file:
+library	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^    private Library library = null;$/;"	f	class:OrderCommandException	file:
+library	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^    private Library library = null;$/;"	f	class:ReturnCommandException	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^    private static Logger log = Logger.getLogger(TestCLIServlet.class);$/;"	f	class:TestCLIServlet	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLICommandFactory.java	/^    private static Logger log = Logger.getLogger(CLICommandFactory.class);$/;"	f	class:CLICommandFactory	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLIController.java	/^    private static Logger log = Logger.getLogger(CLIController.class);$/;"	f	class:CLIController	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private static Logger log = Logger.getLogger(Book.class);$/;"	f	class:Book	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIConsoleView.java	/^    private static Logger log = Logger.getLogger(CLIConsoleView.class);$/;"	f	class:CLIConsoleView	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    private static Logger log = Logger.getLogger(CLIView.class);$/;"	f	class:CLIView	file:
+log	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    private static Logger log = Logger.getLogger(CLIWebView.class);$/;"	f	class:CLIWebView	file:
+main	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLI.java	/^    public static void main(String args[]) {$/;"	m	class:TestCLI
+messages	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    private List<String> messages;$/;"	f	class:CLIView	file:
+model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^    private CLIModel model;$/;"	f	class:TestCLIServlet	file:
+model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLIController.java	/^    private CLIModel model;$/;"	f	class:CLIController	file:
+model	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    protected CLIModel model;$/;"	f	class:Command
+name	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private String name;$/;"	f	class:Book	file:
+nameLibrary	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    private String nameLibrary;$/;"	f	class:AbstractLibrary	file:
+orderBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    public abstract Map<String, Object> orderBook(Map<String, String> parameters)$/;"	m	class:AbstractLibrary
+orderBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^            orderBook(Map<String, String> parameters) $/;"	m	class:CLIModel
+orderBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^    public Map<String, Object> orderBook(Map<String, String> parameters)$/;"	m	class:CSVLibrary
+orderBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Library.java	/^    public Map<String, Object> orderBook(Map<String, String> parameters)$/;"	m	interface:Library
+orderBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^    public Map<String, Object> orderBook(Map<String, String> parameters)$/;"	m	class:TEXTLibrary
+parameters	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    protected Map parameters = new HashMap<String, String> ();$/;"	f	class:Command
+parseDate	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    private Date parseDate(String date) {$/;"	m	class:Book	file:
+request	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    private HttpServletRequest request;$/;"	f	class:CLIWebView	file:
+response	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    private HttpServletResponse response;$/;"	f	class:CLIWebView	file:
+returnBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/AbstractLibrary.java	/^    public abstract Map<String, Object> returnBook(Map<String, String> parameters)$/;"	m	class:AbstractLibrary
+returnBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^    public Map<String, Object> returnBook(Map<String, String> parameters)$/;"	m	class:CLIModel
+returnBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^    public Map<String, Object> returnBook(Map<String, String> parameters)$/;"	m	class:CSVLibrary
+returnBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Library.java	/^    public Map<String, Object> returnBook(Map<String, String> parameters)$/;"	m	interface:Library
+returnBook	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^    public Map<String, Object> returnBook(Map<String, String> parameters)$/;"	m	class:TEXTLibrary
+rewriteFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CSVLibrary.java	/^    private void rewriteFile(File file, List<Book> books)$/;"	m	class:CSVLibrary	file:
+rewriteFile	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/TEXTLibrary.java	/^    private void rewriteFile(File file, Book book)$/;"	m	class:TEXTLibrary	file:
+scanDirectory	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/CLIModel.java	/^    private void scanDirectory(File dirLibrary) {$/;"	m	class:CLIModel	file:
+sendExpression	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIWebView.java	/^    public void sendExpression(String expression, RequestDispatcher dispatcher,$/;"	m	class:CLIWebView
+service	/home/jarek/src/intexsoft/src/com/intexsoft/cli/TestCLIServlet.java	/^    public void service(HttpServletRequest request,$/;"	m	class:TestCLIServlet
+setAbonent	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public void setAbonent(String abonent) {$/;"	m	class:Book
+setCommandName	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public void setCommandName(String commandName) {$/;"	m	class:Command
+setIssued	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/Book.java	/^    public void setIssued(Date date) {$/;"	m	class:Book
+setModel	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public void setModel(CLIModel model) {$/;"	m	class:Command
+setParameters	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public void setParameters(Map parameters) {$/;"	m	class:Command
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/Command.java	/^    public String toString() {$/;"	m	class:Command
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/FindCommandException.java	/^    public String toString() {$/;"	m	class:FindCommandException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/OrderCommandException.java	/^    public String toString() {$/;"	m	class:OrderCommandException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/ReturnCommandException.java	/^    public String toString() {$/;"	m	class:ReturnCommandException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/DeleteFileException.java	/^    public String toString() {$/;"	m	class:DeleteFileException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInCSVLibException.java	/^    public String toString() {$/;"	m	class:FindBookInCSVLibException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/FindBookInTEXTLibException.java	/^    public String toString() {$/;"	m	class:FindBookInTEXTLibException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInCSVLibException.java	/^    public String toString() {$/;"	m	class:OrderBookInCSVLibException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/OrderBookInTEXTLibException.java	/^    public String toString() {$/;"	m	class:OrderBookInTEXTLibException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/RenameTmpFileException.java	/^    public String toString() {$/;"	m	class:RenameTmpFileException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInCSVLibException.java	/^    public String toString() {$/;"	m	class:ReturnBookInCSVLibException
+toString	/home/jarek/src/intexsoft/src/com/intexsoft/cli/model/ReturnBookInTEXTLibException.java	/^    public String toString() {$/;"	m	class:ReturnBookInTEXTLibException
+update	/home/jarek/src/intexsoft/src/com/intexsoft/cli/controller/CLIController.java	/^    public void update(CLIView view) {$/;"	m	class:CLIController
+update	/home/jarek/src/intexsoft/src/com/intexsoft/cli/view/CLIView.java	/^    public void update(Object object) { $/;"	m	class:CLIView

@@ -1,4 +1,4 @@
-package com.intexsoft.cli.command;
+package com.intexsoft.cli.controller;
 
 import java.util.Map;
 import java.util.List;
@@ -13,7 +13,7 @@ public class FindCommand extends Command {
     /**
      * Implementation of the abstract method for executing the command.
      */
-    public List execute() {
+    public List execute() throws FindCommandException {
         return model.findBook(parameters); 
     }
 

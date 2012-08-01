@@ -50,10 +50,10 @@ public class CSVLibrary extends AbstractLibrary {
      * @param parameters Parameters for finding books.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws FindBookException
+     * @throws FindBookInCSVLibException
      */
     public Map<String, Object> findBook(Map<String, String> parameters) 
-            throws FindBookException {
+            throws FindBookInCSVLibException {
 
         List<Book> found = new ArrayList<Book>();
         List<Book> foundMissing = new ArrayList<Book>();
@@ -80,18 +80,18 @@ public class CSVLibrary extends AbstractLibrary {
                                 foundMissing.add((Book) book.clone());
                         }
                     }
-
+                    
                 } catch (FileNotFoundException e) {
-                    throw new FindBookException(file, e);
+                    throw new FindBookInCSVLibException(file, e);
 
                 } catch (IOException e) {
-                    throw new FindBookException(file, e);
+                    throw new FindBookInCSVLibException(file, e);
 
                 } finally {
                     try {
                         if (in != null) in.close();
                     } catch (IOException e) {
-                        throw new FindBookException(file, e);
+                        throw new FindBookInCSVLibException(file, e);
                     }
                 }
             }
@@ -123,10 +123,10 @@ public class CSVLibrary extends AbstractLibrary {
      * @param parameters Parameters for ordering the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws OrderBookException
+     * @throws OrderBookInCSVLibException
      */
     public Map<String, Object> orderBook(Map<String, String> parameters)
-            throws OrderBookException {
+            throws OrderBookInCSVLibException {
 
         Map<String, Object> result = new HashMap<String, Object>();
 
@@ -171,22 +171,22 @@ public class CSVLibrary extends AbstractLibrary {
                     if (found) rewriteFile(file, books);
 
                 } catch (FileNotFoundException e) {
-                    throw new OrderBookException(file, e);
+                    throw new OrderBookInCSVLibException(file, e);
                     
                 } catch (IOException e) {
-                    throw new OrderBookException(file, e);
+                    throw new OrderBookInCSVLibException(file, e);
 
                 } catch (DeleteFileException e) {
-                    throw new OrderBookException(e);
+                    throw new OrderBookInCSVLibException(e);
 
                 } catch (RenameTmpFileException e) {
-                    throw new OrderBookException(e);
+                    throw new OrderBookInCSVLibException(e);
 
                 } finally {
                     try {
                         if (in != null) in.close();
                     } catch (IOException e) {
-                        throw new OrderBookException(file, e);
+                        throw new OrderBookInCSVLibException(file, e);
                     }
                 }
             }
@@ -210,10 +210,10 @@ public class CSVLibrary extends AbstractLibrary {
      * @param parameters Parameters for returning the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws ReturnBookException
+     * @throws ReturnBookInCSVLibException
      */
     public Map<String, Object> returnBook(Map<String, String> parameters)
-            throws ReturnBookException {
+            throws ReturnBookInCSVLibException {
 
         Map<String, Object> result = new HashMap<String, Object>();
         Boolean found = false;
@@ -259,22 +259,22 @@ public class CSVLibrary extends AbstractLibrary {
                     if (found) rewriteFile(file, books);
 
                 } catch (FileNotFoundException e) {
-                    throw new ReturnBookException(file, e);
+                    throw new ReturnBookInCSVLibException(file, e);
                     
                 } catch (IOException e) {
-                    throw new ReturnBookException(file, e);
+                    throw new ReturnBookInCSVLibException(file, e);
 
                 } catch (DeleteFileException e) {
-                    throw new ReturnBookException(e);
+                    throw new ReturnBookInCSVLibException(e);
 
                 } catch (RenameTmpFileException e) {
-                    throw new ReturnBookException(e);
+                    throw new ReturnBookInCSVLibException(e);
 
                 } finally {
                     try {
                         if (in != null) in.close();
                     } catch (IOException e) {
-                        throw new ReturnBookException(file, e);
+                        throw new ReturnBookInCSVLibException(file, e);
                     }
                 }
             }

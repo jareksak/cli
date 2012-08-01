@@ -7,29 +7,11 @@ import java.io.File;
  */
 public class FindBookException extends Exception {
     
-    private File file = null;
-
     //Default constructor
     public FindBookException() {}
 
-    //Constructor recording an file object & can be chained
-    public FindBookException(File file, Throwable cause) {
+    //Constructor can be chained
+    public FindBookException(Throwable cause) {
         super(cause);
-        this.file = file;
-    }
-    
-    private Boolean isSetFile() {
-        return (file != null) ? true : false;
-    }
-
-    public String toString() {
-        String message;
-        if (isSetFile()) {
-            message = "FindBookException. File: " + file.getPath();
-        } else {
-            message = "FindBookException.";
-        }
-
-        return message;
     }
 }

@@ -5,17 +5,15 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.File;
-import java.io.StringWriter;
-import java.io.PrintWriter;
 
-import org.apache.log4j.Logger;
+import com.intexsoft.cli.controller.FindCommandException;
+import com.intexsoft.cli.controller.OrderCommandException;
+import com.intexsoft.cli.controller.ReturnCommandException;
 
 /**
  * The class represent a model of the Central Libraries Index (CLI).<br>
  */
 public class CLIModel {
-
-    private static Logger log = Logger.getLogger(CLIModel.class);
 
     /** A list of library objects.*/
     private List<Library> libraries = new ArrayList<Library>();
@@ -60,8 +58,10 @@ public class CLIModel {
      * </pre>
      *
      * @param parameters Parameters for finding books.
+     * @throws FindCommandException
      */ 
-    public List findBook(Map<String, String> parameters) {
+    public List findBook(Map<String, String> parameters) 
+            throws FindCommandException {
 
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
         Boolean found = false;
@@ -77,12 +77,7 @@ public class CLIModel {
                 }
 
             } catch (FindBookException e) {
-                StringWriter trace = new StringWriter();
-                e.printStackTrace(new PrintWriter(trace));
-                log.error("Library: " + library.getName() + "\n"
-                    + trace.toString());
-                throw new RuntimeException("Error when finding a book. " +
-                    "See the messages.log file for details.");
+                throw new FindCommandException(library, e);
             }
         }
 
@@ -102,9 +97,11 @@ public class CLIModel {
      * </pre>
      *
      * @param parameters for ordering the book.
+     * @throws OrderCommandException
      */
     public Map<String, Object>
-            orderBook(Map<String, String> parameters) {
+            orderBook(Map<String, String> parameters) 
+            throws OrderCommandException {
         
         Map<String, Object> result = null; 
         Boolean found = false;
@@ -120,12 +117,7 @@ public class CLIModel {
                 }
                 
             } catch (OrderBookException e) {
-                StringWriter trace = new StringWriter();
-                e.printStackTrace(new PrintWriter(trace));
-                log.error("Library: " + library.getName() + "\n"
-                    + trace.toString());
-                throw new RuntimeException("Error when ordering a book. " +
-                    "See the messages.log file for details.");
+                throw new OrderCommandException(library, e);
             }
         }
 
@@ -145,8 +137,10 @@ public class CLIModel {
      * </pre>
      *
      * @param parameters Parameters for returning the book.
+     * @throws ReturnCommandException
      */
-    public Map<String, Object> returnBook(Map<String, String> parameters) {
+    public Map<String, Object> returnBook(Map<String, String> parameters)
+            throws ReturnCommandException {
 
         Map<String, Object> result = null;
         Boolean found = false;
@@ -162,12 +156,7 @@ public class CLIModel {
                 }
 
             } catch (ReturnBookException e) {
-                StringWriter trace = new StringWriter();
-                e.printStackTrace(new PrintWriter(trace));
-                log.error("Library: " + library.getName() + "\n"
-                    + trace.toString());
-                throw new RuntimeException("Error when returning a book. " +
-                    "See the messages.log file for details.");
+                throw new ReturnCommandException(library, e);
             }
         } 
 

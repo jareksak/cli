@@ -1,4 +1,4 @@
-package com.intexsoft.cli.command;
+package com.intexsoft.cli.controller;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -34,7 +34,7 @@ public abstract class Command {
     /**
      * Abstract method for executing the command.
      */
-    public abstract Object execute();
+    public abstract Object execute() throws CommandException;
 
     /**
      * Abstract method for validate syntax of the command.

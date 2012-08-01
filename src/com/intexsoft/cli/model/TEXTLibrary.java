@@ -49,10 +49,10 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param parameters Parameters for finding books.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws FindBookException
+     * @throws FindBookInTEXTLibException
      */
     public Map<String, Object> findBook(Map<String, String> parameters)
-            throws FindBookException {
+            throws FindBookInTEXTLibException {
 
         List<Book> found = new ArrayList<Book>();
         List<Book> foundMissing = new ArrayList<Book>();
@@ -74,11 +74,12 @@ public class TEXTLibrary extends AbstractLibrary {
                         else
                             foundMissing.add((Book) book.clone());
                     }
+
                 } catch (FileNotFoundException e) {
-                    throw new FindBookException(file, e);
+                    throw new FindBookInTEXTLibException(file, e);
                     
                 } catch (IOException e) {
-                    throw new FindBookException(file, e);
+                    throw new FindBookInTEXTLibException(file, e);
                 }
             }
         }
@@ -109,10 +110,10 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param parameters Parameters for ordering the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws OrderBookException
+     * @throws OrderBookInTEXTLibException
      */
     public Map<String, Object> orderBook(Map<String, String> parameters)
-            throws OrderBookException {
+            throws OrderBookInTEXTLibException {
 
         Map<String, Object> result = new HashMap<String, Object>();
 
@@ -141,16 +142,16 @@ public class TEXTLibrary extends AbstractLibrary {
                         }
                     } 
                 } catch (FileNotFoundException e) {
-                    throw new OrderBookException(file, e);
+                    throw new OrderBookInTEXTLibException(file, e);
                     
                 } catch (IOException e) {
-                    throw new OrderBookException(file, e);
+                    throw new OrderBookInTEXTLibException(file, e);
 
                 } catch (DeleteFileException e) {
-                    throw new OrderBookException(e);
+                    throw new OrderBookInTEXTLibException(e);
 
                 } catch (RenameTmpFileException e) {
-                    throw new OrderBookException(e);
+                    throw new OrderBookInTEXTLibException(e);
                 }
             }
         }
@@ -173,10 +174,10 @@ public class TEXTLibrary extends AbstractLibrary {
      * @param parameters Parameters for returning the book.
      * @return A Map&lt;String, Object&gt; object.
      *
-     * @throws ReturnBookException
+     * @throws ReturnBookInTEXTLibException
      */
     public Map<String, Object> returnBook(Map<String, String> parameters)
-            throws ReturnBookException {
+            throws ReturnBookInTEXTLibException {
 
         Map<String, Object> result = new HashMap<String, Object>();
         Boolean found = false;
@@ -209,16 +210,16 @@ public class TEXTLibrary extends AbstractLibrary {
                         }
                     }
                 } catch (FileNotFoundException e) {
-                    throw new ReturnBookException(file, e);
+                    throw new ReturnBookInTEXTLibException(file, e);
                     
                 } catch (IOException e) {
-                    throw new ReturnBookException(file, e);
+                    throw new ReturnBookInTEXTLibException(file, e);
 
                 } catch (DeleteFileException e) {
-                    throw new ReturnBookException(e);
+                    throw new ReturnBookInTEXTLibException(e);
 
                 } catch (RenameTmpFileException e) {
-                    throw new ReturnBookException(e);
+                    throw new ReturnBookInTEXTLibException(e);
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.intexsoft.cli.command;
+package com.intexsoft.cli.controller;
 
 import java.util.Map;
 import com.intexsoft.cli.model.CLIModel;
@@ -11,7 +11,7 @@ public class ReturnCommand extends Command {
     /**
      * Implementation of the abstract method for executing the command.
      */
-    public Map execute() {
+    public Map execute() throws ReturnCommandException {
         return model.returnBook(parameters); 
     }
 

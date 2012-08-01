@@ -1,5 +1,4 @@
 com.intexsoft.cli
-com.intexsoft.cli.command
 com.intexsoft.cli.controller
 com.intexsoft.cli.model
 com.intexsoft.cli.view

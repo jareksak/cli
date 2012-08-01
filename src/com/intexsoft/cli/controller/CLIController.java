@@ -1,9 +1,10 @@
 package com.intexsoft.cli.controller;
 
+import java.io.StringWriter;
+import java.io.PrintWriter;
+
 import com.intexsoft.cli.view.CLIView;
 import com.intexsoft.cli.model.CLIModel;
-import com.intexsoft.cli.command.Command;
-import com.intexsoft.cli.command.CLICommandFactory;
 
 import org.apache.log4j.Logger;
 
@@ -47,7 +48,16 @@ public class CLIController {
         
         Object result;
         if (command != null) {
-            result = command.execute();
+            try {
+                result = command.execute();
+            } catch (CommandException e) {
+                StringWriter trace = new StringWriter();
+                e.printStackTrace(new PrintWriter(trace));
+                log.error(trace.toString());
+                result = "Error when command executing.\n" +
+                    "Details in the log file.\n" +
+                    "Try again.";
+            }
         } else {
             result = "SYNTAXERROR";
         }
